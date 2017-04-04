@@ -1,0 +1,10 @@
+﻿@model System.Collections.Generic.List<string>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@Html.Partial("_FileUpload", new AzureBlobPhotos.Models.Picture())
+@foreach(string url in Model)
+{
+    <img src="@url" alt="Photo" />
+}

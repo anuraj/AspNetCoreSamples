@@ -1,0 +1,15 @@
+@model AzureBlobPhotos.Models.Picture
+@if(ViewBag.Show != null && bool.Parse(ViewBag.Show))
+{
+    <div class="alert alert-info" role="alert">@ViewBag.Message</div>
+}
+
+<form asp-action="Upload" method="POST" asp-controller="Home" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="File">Upload Image</label>
+        <input type="file" asp-for="File">
+        <span asp-validation-for="File"></span>
+        <p class="help-block">Upload images for photo album. PNG, JPG and GIF Images formats are supported</p>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

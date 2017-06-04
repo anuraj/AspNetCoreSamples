@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-action="GenerateUrlPreview" asp-controller="home" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#content" data-ajax-loading="#loading">
+    <div class="form-group">
+        <label for="Url">URL to Generate Preview</label>
+        <input type="url" class="form-control" name="Url" id="Url" placeholder="http://google.com">
+    </div>
+    <button type="submit" class="btn btn-default">Generate Preview</button>
+    <div id="content"></div>
+    <div id="loading" style="display:none">Generating the Preview...</div>
+</form>

@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Signal R - Hello World</title>
+</head>
+
+<body>
+    <label>Message</label>
+    <input type="text" id="txtMessage">
+    <input type="button" id="cmdSend" value="Send" onclick="SendMessage()">
+    <div id="DisplayMessages"></div>
+    <script src="/Scripts/signalr-client-1.0.0-alpha1-final.min.js"></script>
+    <script>
+        let connection = new signalR.HubConnection('/chat');
+
+        connection.on('send', data => {
+            var DisplayMessagesDiv = document.getElementById("DisplayMessages");
+            DisplayMessagesDiv.innerHTML += "<br/>" + data;
+        });
+
+        connection.on('Welcome', data => {
+            alert('Hello');
+        });
+
+        connection.start().then(() => connection.invoke('send', ''));
+        function SendMessage() {
+            var msg = document.getElementById("txtMessage").value;
+            connection.invoke('send', msg);
+        }
+    </script>
+</body>
+
+</html>

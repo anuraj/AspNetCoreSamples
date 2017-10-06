@@ -53,6 +53,7 @@ namespace WebApiAuthDemo
             }
 
             app.UseAuthentication();
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }

@@ -1,0 +1,8 @@
+obj
+bin
+.vscode
+wwwroot/lib
+node_modules
+package-lock.json
+.bowerrc
+bower.json

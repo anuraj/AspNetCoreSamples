@@ -1,0 +1,23 @@
+{
+  "name": "styledemo",
+  "version": "1.0.0",
+  "description": "An ASP.NET Core application for getting started with Less",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "keywords": [
+    "aspnetcore",
+    "less"
+  ],
+  "author": "anuraj",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-less": "3.3.2",
+    "gulp-clean-css": "3.9.0"
+  }
+}
+
+

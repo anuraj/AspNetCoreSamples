@@ -1,13 +1,7 @@
-using System;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace FeatureToggle.Infrastructure
 {
-    public interface IFeature
-    {
-        bool IsFeatureEnabled(string feature);
-    }
     public class Feature : IFeature
     {
         private readonly IConfiguration _configuration;
@@ -17,16 +11,13 @@ namespace FeatureToggle.Infrastructure
         }
         public bool IsFeatureEnabled(string feature)
         {
-            bool.TryParse(_configuration[$"Features:{feature}"], out bool result);
-            return result;
-        }
-    }
+            var featureValue = _configuration[$"Features:{feature}"];
+            if (string.IsNullOrWhiteSpace(featureValue))
+            {
+                throw new FeatureNotFoundException(feature);
+            }
 
-    public static class FeatureExtensions
-    {
-        public static void AddFeatureToggle(this IServiceCollection services)
-        {
-            services.AddTransient(typeof(IFeature), typeof(Feature));
+            return bool.Parse(featureValue);
         }
     }
 }

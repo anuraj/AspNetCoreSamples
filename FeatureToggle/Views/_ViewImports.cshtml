@@ -1,3 +1,8 @@
 @using FeatureToggle
 @using FeatureToggle.Models
+@using FeatureToggle.Infrastructure
+
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, FeatureToggle
+
+@inject IFeature feature

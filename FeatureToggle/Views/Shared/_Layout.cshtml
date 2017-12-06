@@ -17,6 +17,8 @@
     </environment>
 </head>
 <body>
+    @if(feature.IsFeatureEnabled("Navigation"))
+    {
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -37,6 +39,7 @@
             </div>
         </div>
     </nav>
+    }
     <div class="container body-content">
         @RenderBody()
         <hr />

@@ -13,6 +13,8 @@ namespace FeatureToggle.Infrastructure
         }
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
+            output.TagMode = TagMode.StartTagAndEndTag;
+            output.TagName = "DIV";
             if (!_feature.IsFeatureEnabled(Name))
             {
                 output.SuppressOutput();

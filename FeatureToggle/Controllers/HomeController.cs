@@ -18,6 +18,7 @@ namespace FeatureToggle.Controllers
         }
         public IActionResult Index()
         {
+            ViewData["Message"] = "Welcome to Feature Toggled Web App";
             return View();
         }
 

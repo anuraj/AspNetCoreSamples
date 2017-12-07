@@ -6,7 +6,7 @@ namespace FeatureToggle.Infrastructure
     {
         public static void AddFeatureToggle(this IServiceCollection services)
         {
-            services.AddTransient(typeof(IFeature), typeof(Feature));
+            services.AddSingleton(typeof(IFeature), typeof(Feature));
         }
     }
 }

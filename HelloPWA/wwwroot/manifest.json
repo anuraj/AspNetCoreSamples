@@ -1,0 +1,17 @@
+{
+    "name": "ASP.NET Core PWA",
+    "short_name": "ASPNETCOREPWA",
+    "description": "Progressive Web Application using ASP.NET Core",
+    "icons": [
+        {
+            "src": "/images/icon-192x192.png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/images/icon-512x512.png",
+            "sizes": "512x512"
+        }
+    ],
+    "display": "standalone",
+    "start_url": "/"
+}

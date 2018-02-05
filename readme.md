@@ -1,4 +1,5 @@
 # ASP.NET Core Example Projects and Code Snippets.
+* [Angular 4 CRUD application with ASP.NET Core Web API](https://github.com/anuraj/AspNetCoreSamples/tree/master/BooksApi) - Angular 4 / 5 CRUD application with ASP.NET Core Web API Backend - In Memory database. Also contains code for supporting Antiforgery token.
 * [Progressive Web Apps in ASP.NET Core](https://github.com/anuraj/AspNetCoreSamples/tree/master/HelloPWA) - Building Progressive Web Apps (PWA) in ASP.NET Core.
 * [Feature Toggle in ASP.NET Core](https://github.com/anuraj/AspNetCoreSamples/tree/master/FeatureToggle) - Implementing Feature Toggle in ASP.NET Core.
 * [LESS CSS in ASP.NET Core](https://github.com/anuraj/AspNetCoreSamples/tree/master/StyleDemo) - LESS CSS - Getting started with ASP.NET Core.

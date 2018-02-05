@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>
+    Book List
+  </h1>
+  <hr />
+  <a href="/create">Create Book</a>
+  <hr />
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th colspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.Title }}</td>
+        <td>{{ book.Author }}</td>
+        <td><a href="/details/{{book.Id}}">Details</a></td>
+        <td><a href="/edit/{{book.Id}}">Edit</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

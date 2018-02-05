@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>{{ book.Title }}</h1>
+  <dl class="list">
+    <dt>Description</dt>
+    <dd>{{ book.Description }}</dd>
+    <dt>Author</dt>
+    <dd>{{ book.Author }}</dd>
+    <dt>PublishedOn</dt>
+    <dd>{{ book.PublishedOn }}</dd>
+  </dl>
+  <div class="row">
+    <div class="col-md-12">
+      <a [routerLink]="['/edit', book.Id]" class="btn btn-success">Edit</a>
+      <button class="btn btn-danger" type="button" (click)="deleteBook(book.Id)">Delete</button>
+    </div>
+  </div>
+</div>

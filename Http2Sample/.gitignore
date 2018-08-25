@@ -1,0 +1,7 @@
+obj
+bin
+.vscode
+wwwroot
+views
+controllers
+Models

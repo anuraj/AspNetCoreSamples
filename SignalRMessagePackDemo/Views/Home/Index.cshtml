@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+  <div class="row">
+      <div class="col-9">
+        <form>
+        <div class="form-group">
+            <label for="userInput">User</label>
+            <input type="text" class="form-control" id="userInput" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="messageInput">Message</label>
+            <input type="text" class="form-control" id="messageInput" placeholder="Message">
+        </div>
+        <button type="button" id="sendButton" class="btn btn-primary">Send Message</button>
+        <div class="form-group">
+            <ul id="messagesList"></ul>
+        </div>
+        </form>
+    </div>
+  </div>    
+</div>

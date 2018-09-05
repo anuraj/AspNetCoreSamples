@@ -1,4 +1,8 @@
 # ASP.NET Core Example Projects and Code Snippets.
+* [CosmosDB EF Provider - Getting started](https://github.com/anuraj/AspNetCoreSamples/tree/master/HelloCosmosDb) - Getting started with Cosmos DB EF Provider.
+* [SignalR MessagePack support](https://github.com/anuraj/AspNetCoreSamples/tree/master/SignalRMessagePackDemo) - Message Pack protocol for SignalR
+* [HTTP2 Implementation for ASP.NET Core](https://github.com/anuraj/AspNetCoreSamples/tree/master/Http2Sample) - HTTP2 implementation for ASP.NET Core
+* [OData in ASP.NET Core](https://github.com/anuraj/AspNetCoreSamples/tree/master/SampleODataApp) - OData sample application in ASP.NET Core.
 * [Web Hooks in ASP.NET Core](https://github.com/anuraj/AspNetCoreSamples/tree/master/WebHooksDemo) - Sample application in ASP.NET Core 2.1 - GitHub Web Hooks. Associated blog post - [WebHooks in ASP.NET Core
 ](https://dotnetthoughts.net/webhooks-in-aspnet-core/)
 * [Angular 4 CRUD application with ASP.NET Core Web API](https://github.com/anuraj/AspNetCoreSamples/tree/master/BooksApi) - Angular 4 / 5 CRUD application with ASP.NET Core Web API Backend - In Memory database. Also contains code for supporting Antiforgery token.

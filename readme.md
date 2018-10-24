@@ -1,4 +1,5 @@
 # ASP.NET Core Example Projects and Code Snippets.
+* [Blazor - SignalR App](https://github.com/anuraj/AspNetCoreSamples/tree/master/BlazorChat) - Simple Chat app using Blazor and SignalR
 * [CosmosDB EF Provider - Getting started](https://github.com/anuraj/AspNetCoreSamples/tree/master/HelloCosmosDb) - Getting started with Cosmos DB EF Provider.
 * [SignalR MessagePack support](https://github.com/anuraj/AspNetCoreSamples/tree/master/SignalRMessagePackDemo) - Message Pack protocol for SignalR
 * [HTTP2 Implementation for ASP.NET Core](https://github.com/anuraj/AspNetCoreSamples/tree/master/Http2Sample) - HTTP2 implementation for ASP.NET Core

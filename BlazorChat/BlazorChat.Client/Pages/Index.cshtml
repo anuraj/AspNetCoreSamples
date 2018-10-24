@@ -1,0 +1,122 @@
+﻿@using Blazor.Extensions;
+@using System;
+
+@page "/"
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Blazor Chat with SignalR Core</h1>
+        <p class="lead">This is a sample chat app developed in Blazor and powered by SignalR Core.</p>
+        @if(!IsStarted)
+        {
+        <form class="form-inline">
+            <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">@@</div>
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username" bind="@Name" />
+            </div>
+            <button type="submit" class="btn btn-primary mb-2" onclick="@StartChatting">Start</button>
+        </form>
+        } else {
+        <div class="list-group" style="overflow:auto;max-height: 65vh;">
+            <span class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Message</h5>
+                </div>
+                <input type="text" id="message" class="form-control" bind="@Message" />
+                <button type="submit" class="btn btn-primary mb-2" onclick="@SendMessage">Send</button>
+            </span>
+            @foreach(var message in messages)
+            {
+                <span class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">@message.Name</h5>
+                        <small class="text-muted">@TimeAgo(message.CreatedOn)</small>
+                    </div>
+                    <p class="mb-1">@message.Content</p>
+                    <small class="text-muted"></small>
+                </span>
+            }
+        </div>
+        }
+    </div>
+</div>
+
+@functions {
+    HubConnection connection;
+    string Message = "";
+    string Name = "";
+    bool IsStarted = false;
+    IList<Message> messages = new List<Message>();
+    bool disabled = true;
+
+    async Task SendMessage()
+    {
+        await connection.InvokeAsync("Send", Name, Message);
+        Message = "";
+        IsStarted = true;
+    }
+
+    async Task StartChatting()
+    {
+        IsStarted = Name != "";
+        if(IsStarted)
+        {
+            connection = new HubConnectionBuilder().WithUrl("https://localhost:44322/chathub?Name=" + Name).Build();
+            connection.On<string, string>("broadcastMessage", this.OnBroadcastMessage);
+            await connection.StartAsync();
+        }
+    }
+
+    Task OnBroadcastMessage(string name, string message)
+    {
+        messages.Insert(0, new Message(){ Name = name, Content = message });
+        StateHasChanged();
+        return Task.CompletedTask;
+    }
+
+    string TimeAgo(DateTime dateTime)
+    {
+        string result = string.Empty;
+        var timeSpan = DateTime.Now.Subtract(dateTime);
+
+        if (timeSpan <= TimeSpan.FromSeconds(60))
+        {
+            result = string.Format("{0} seconds ago", timeSpan.Seconds);
+        }
+        else if (timeSpan <= TimeSpan.FromMinutes(60))
+        {
+            result = timeSpan.Minutes > 1 ? 
+                String.Format("about {0} minutes ago", timeSpan.Minutes) :
+                "about a minute ago";
+        }
+        else if (timeSpan <= TimeSpan.FromHours(24))
+        {
+            result = timeSpan.Hours > 1 ? 
+                String.Format("about {0} hours ago", timeSpan.Hours) : 
+                "about an hour ago";
+        }
+        else if (timeSpan <= TimeSpan.FromDays(30))
+        {
+            result = timeSpan.Days > 1 ? 
+                String.Format("about {0} days ago", timeSpan.Days) : 
+                "yesterday";
+        }
+        else if (timeSpan <= TimeSpan.FromDays(365))
+        {
+            result = timeSpan.Days > 30 ? 
+                String.Format("about {0} months ago", timeSpan.Days / 30) : 
+                "about a month ago";
+        }
+        else
+        {
+            result = timeSpan.Days > 365 ? 
+                String.Format("about {0} years ago", timeSpan.Days / 365) : 
+                "about a year ago";
+        }
+
+        return result;
+    }
+}

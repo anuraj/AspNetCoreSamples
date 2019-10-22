@@ -1,4 +1,5 @@
 # ASP.NET Core Example Projects and Code Snippets.
+
 * [gRPC in ASP.NET Core](https://github.com/anuraj/AspNetCoreSamples/tree/master/GRPCDemoApp) - Introduction to gRPC in ASP.NET Core
 * [Blazor - SignalR App](https://github.com/anuraj/AspNetCoreSamples/tree/master/BlazorChat) - Simple Chat app using Blazor and SignalR
 * [CosmosDB EF Provider - Getting started](https://github.com/anuraj/AspNetCoreSamples/tree/master/HelloCosmosDb) - Getting started with Cosmos DB EF Provider.
@@ -18,3 +19,6 @@
 * [TagHelperDemo](https://github.com/anuraj/AspNetCoreSamples/tree/master/TagHelperDemo) - Various tag helper source code added. ASP.NET Core Gravatar Tag Helper code added. Markdown Tag helper added
 * [NodeServicesSample](https://github.com/anuraj/AspNetCoreSamples/tree/master/NodeServicesSample) - Using Node Services in ASP.NET Core.
 * [AzureBlobPhotos](https://github.com/anuraj/AspNetCoreSamples/tree/master/AzureBlobPhotos) - Simple Photo Gallery using Azure Blob Storage and ASP.NET Core
+
+<a href="https://www.buymeacoffee.com/dotnetthoughts" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/black_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" /></a>
+

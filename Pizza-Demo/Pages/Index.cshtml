@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div id="chart"></div>
+
+@section Scripts
+{
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+    var jsonData = $.ajax({
+        url: "/Index?handler=ChartData",
+        dataType: "json",
+        async: false
+        }).responseText;
+    var data = new google.visualization.DataTable(jsonData);
+    var options = {'title':'How Much Pizza I Ate Last Night',
+                    'width':600,
+                    'height':500};
+
+    var chart = new google.visualization.PieChart(document.getElementById('chart'));
+    chart.draw(data, options);
+    }
+    </script>
+}

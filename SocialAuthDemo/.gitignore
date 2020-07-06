@@ -1,0 +1,6 @@
+obj
+bin
+wwwroot/lib
+appsettings.*.json
+.vscode
+Properties

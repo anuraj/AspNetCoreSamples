@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="01/28/2021 16:42:20" ReportInfo.Modified="01/28/2021 17:34:58" ReportInfo.CreatorVersion="2021.1.0.0">
+  <Styles Name="Blue">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Fill.Color="LightSkyBlue" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Fill.Color="LightSkyBlue" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="AliceBlue" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq+rW0RkboK+/8CKGGYUID3ctBV8q9SvKYxl3iiE7vBnh7Tgou0+4WFf3NfmPSvHVFnqjoO59n96Adpsaf+rYMpmB2SnyuKQWlq/M4a0jJOr6+cKdIK/2WvupX70sK3SloZihD1wWbY7+2ffrH1SdQ3/N+mcn8YFdgkO2mcuVmECB5VPNBe5mYeK2Db9KzlCYB">
+      <TableDataSource Name="Categories" DataType="System.Int32" Enabled="true" TableName="Categories">
+        <Column Name="CategoryID" DataType="System.Int32"/>
+        <Column Name="CategoryName" DataType="System.String"/>
+        <Column Name="Description" DataType="System.String"/>
+        <Column Name="Picture" DataType="System.Byte[]" BindableControl="Picture"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Dock="Fill" Text="Categories" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" Style="Title"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="41.8" Width="718.2" Height="132.3" DataSource="Categories">
+      <TextObject Name="Text2" Width="113.4" Height="18.9" Fill.Color="LightSkyBlue" Text="CategoryID" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text3" Left="113.4" Width="604.8" Height="18.9" Text="[Categories.CategoryID]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text4" Top="18.9" Width="113.4" Height="18.9" Fill.Color="LightSkyBlue" Text="CategoryName" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text5" Left="113.4" Top="18.9" Width="604.8" Height="18.9" Text="[Categories.CategoryName]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text6" Top="37.8" Width="113.4" Height="18.9" Fill.Color="LightSkyBlue" Text="Description" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text7" Left="113.4" Top="37.8" Width="604.8" Height="18.9" Text="[Categories.Description]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text8" Top="56.7" Width="113.4" Height="18.9" Fill.Color="LightSkyBlue" Text="Picture" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <PictureObject Name="Picture1" Left="113.4" Top="56.7" Width="75.6" Height="75.6" DataColumn="Categories.Picture"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="178.1" Width="718.2" Height="18.9">
+      <TextObject Name="Text10" Width="718.2" Height="18.9" Dock="Fill" Fill.Color="LightSkyBlue" Text="[PageN]" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

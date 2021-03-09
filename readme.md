@@ -1,4 +1,5 @@
 # ASP.NET Core Example Projects and Code Snippets.
+* [File Upload with Angular and ASP.NET Core](https://github.com/anuraj/AspNetCoreSamples/tree/master/AngularFileUploadDemo)
 * [Realtime applications on Angular with ASP.NET Core and SignalR](https://github.com/anuraj/AspNetCoreSamples/tree/master/AngularSignalRDemo)
 * [Fast Report integration in ASP.NET Core MVC](https://github.com/anuraj/AspNetCoreSamples/tree/master/FastReportDemo)
 * [Versioning in ASP.NET Core Web API](https://github.com/anuraj/AspNetCoreSamples/tree/master/WebApiApp) - How to implement versioning in ASP.NET Core Web API.

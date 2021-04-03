@@ -24,4 +24,4 @@
 * [NodeServicesSample](https://github.com/anuraj/AspNetCoreSamples/tree/master/NodeServicesSample) - Using Node Services in ASP.NET Core.
 * [AzureBlobPhotos](https://github.com/anuraj/AspNetCoreSamples/tree/master/AzureBlobPhotos) - Simple Photo Gallery using Azure Blob Storage and ASP.NET Core
 
-<a href="https://www.buymeacoffee.com/dotnetthoughts" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+<a href="https://www.buymeacoffee.com/dotnetthoughts" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a> [![HitCount](http://hits.dwyl.com/anuraj/AspNetCoreSamples.svg)](http://hits.dwyl.com/anuraj/AspNetCoreSamples)

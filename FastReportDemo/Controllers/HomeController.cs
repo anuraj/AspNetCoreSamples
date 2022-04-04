@@ -15,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using System.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using FastReport.Export.PdfSimple;
 
 namespace FastReportDemo.Controllers
 {
@@ -52,6 +53,24 @@ namespace FastReportDemo.Controllers
             webReport.Report.RegisterData(categories, "Categories");
             return View(webReport);
         }
+
+        public IActionResult ExportReport()
+        {
+            var webReport = new WebReport();
+            var mssqlDataConnection = new MsSqlDataConnection();
+            mssqlDataConnection.ConnectionString = _configuration.GetConnectionString("NorthWindConnection");
+            webReport.Report.Dictionary.Connections.Add(mssqlDataConnection);
+            webReport.Report.Load(Path.Combine(_hostEnvironment.ContentRootPath, "reports", "northwind-categories.frx"));
+            var categories = GetTable<Category>(_northwindContext.Categories, "Categories");
+            webReport.Report.RegisterData(categories, "Categories");
+            webReport.Report.Prepare();
+            Stream stream = new MemoryStream();
+            webReport.Report.Export(new PDFSimpleExport(), stream);
+            stream.Position = 0;
+            // return stream in browser
+            return File(stream, "application/zip", "report.pdf");
+        }
+
         static DataTable GetTable<TEntity>(IEnumerable<TEntity> table, string name) where TEntity : class
         {
             var offset = 78;

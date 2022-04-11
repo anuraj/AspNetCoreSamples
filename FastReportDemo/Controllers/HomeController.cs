@@ -61,7 +61,8 @@ namespace FastReportDemo.Controllers
             mssqlDataConnection.ConnectionString = _configuration.GetConnectionString("NorthWindConnection");
             webReport.Report.Dictionary.Connections.Add(mssqlDataConnection);
             webReport.Report.Load(Path.Combine(_hostEnvironment.ContentRootPath, "reports", "northwind-categories.frx"));
-            var categories = GetTable<Category>(_northwindContext.Categories, "Categories");
+            var filteredCategories = _northwindContext.Categories.Where(c => c.CategoryName.StartsWith("C"));
+            var categories = GetTable<Category>(filteredCategories, "Categories");
             webReport.Report.RegisterData(categories, "Categories");
             webReport.Report.Prepare();
             Stream stream = new MemoryStream();

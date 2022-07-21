@@ -13,7 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.8.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.3" />
     <PackageReference Include="Microsoft.Azure.Cosmos.Table" Version="1.0.8" />
     <PackageReference Include="Myrmec" Version="1.2.0" />

@@ -1,4 +1,5 @@
 # ASP.NET Core Example Projects and Code Snippets.
+* [Minimal API Versioning Example](https://github.com/anuraj/AspNetCoreSamples/tree/master/WeatherForecastApi)
 * [Block Azure B2C Users with Graph API](https://github.com/anuraj/AspNetCoreSamples/tree/master/BlockAzureB2CUsers)
 * [Basic Authentication in ASP.NET Core Web API](https://github.com/anuraj/AspNetCoreSamples/tree/master/BasicAuthentication)
 * [File Upload with Angular and ASP.NET Core](https://github.com/anuraj/AspNetCoreSamples/tree/master/AngularFileUploadDemo)

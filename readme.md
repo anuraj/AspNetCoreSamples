@@ -1,4 +1,5 @@
 # ASP.NET Core Example Projects and Code Snippets.
+* [Scalar API documentation](https://github.com/anuraj/AspNetCoreSamples/tree/master/Scalar-Api-Doc)
 * [Serilog and Seq example](https://github.com/anuraj/AspNetCoreSamples/tree/master/SeqSerilogDemoMvc)
 * [Minimal API Versioning Example](https://github.com/anuraj/AspNetCoreSamples/tree/master/WeatherForecastApi)
 * [Block Azure B2C Users with Graph API](https://github.com/anuraj/AspNetCoreSamples/tree/master/BlockAzureB2CUsers)
